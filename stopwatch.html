@@ -1,0 +1,42 @@
+<html><head>  
+	<title>Stopwatch</title>
+</head>
+<body>
+	<div style="margin: auto;
+	text-align:center;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;">
+	<span id="stopwatch">00:00:00</span></div>
+
+	<script type="text/javascript">
+
+		String.prototype.toHHMMSS = function () {
+		    var sec_num = parseInt(this, 10); // don't forget the second param
+		    var hours   = Math.floor(sec_num / 3600);
+		    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+		    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+		    if (hours   < 10) {hours   = "0"+hours;}
+		    if (minutes < 10) {minutes = "0"+minutes;}
+		    if (seconds < 10) {seconds = "0"+seconds;}
+		    return hours+':'+minutes+':'+seconds;
+		}
+		let startTime = new Date()
+
+
+		window.setInterval(function() {
+			let currentTime = new Date()
+			elapsed = (currentTime - startTime)/1000
+			// console.log(elapsed.toString().toHHMMSS())	
+			var span = document.getElementById("stopwatch")
+			span.textContent = elapsed.toString().toHHMMSS()
+
+		}, 1000);
+	</script>
+</body></html>
