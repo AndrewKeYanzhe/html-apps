@@ -5,7 +5,14 @@ function setColor(color){
 	document.getElementById("luminance_8bit").textContent = color
 	document.getElementById("luminance_percent").textContent = Math.round(color/255*100)
 	document.body.style.backgroundColor = "rgb("+color+","+color+","+color+")"
+	slider.noUiSlider.set(color);
+}
 
+function setColorFromSlider(color){
+	lum_8bit = color
+	document.getElementById("luminance_8bit").textContent = color
+	document.getElementById("luminance_percent").textContent = Math.round(color/255*100)
+	document.body.style.backgroundColor = "rgb("+color+","+color+","+color+")"
 }
 
 function uncheckRadios(){
@@ -70,7 +77,11 @@ function checkKey(e) {
 
 
 function init(){
-
+	var slider = document.getElementById('slider');
+	// slider.noUiSlider.set(200);
+	slider.noUiSlider.on('update', function (values, handle) {
+		setColorFromSlider(Math.round(values))
+	});
 }
 
 window.onload = init;
