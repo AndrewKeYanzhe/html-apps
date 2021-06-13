@@ -9,7 +9,7 @@ function setColor(color){
 }
 
 function uncheckRadios(){
-	let radios = document.getElementsByClassName("custom-switch-input")
+	let radios = document.getElementsByClassName("form-check-input")
 
 	for (var i = 0; i < radios.length; i++) {
 		radios.item(i).checked = false;
