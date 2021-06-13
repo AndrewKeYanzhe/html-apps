@@ -30,8 +30,17 @@ function applyRadioValue(color){
 }
 
 function applyTextValue(){
+	if (document.getElementById("textValue").value == ""){
+		return
+	}
+
 	lum_8bit = Math.round(document.getElementById("textValue").value)
+
+
+
 	lum_8bit = Math.min(Math.max(lum_8bit, 0), 255);
+
+
 
 	document.getElementById("textValue").value = lum_8bit
 	if (!isNaN(lum_8bit)){
