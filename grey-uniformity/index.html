@@ -64,7 +64,7 @@
         <div class="text-center mb-4">
           <img src="./static/logo.svg" height="36" alt="">
       </div>
-      <form class="card card-md">
+      <form class="card card-md" id="panel">
         <div class="card-body">
             <div class="card-title"><h3>Grey Uniformity Test</h3></div>
             <!-- <p>Luminance</p> -->
@@ -119,9 +119,9 @@
 
                 <input type="text" class="form-control" id="textValue" placeholder="RGB luminance value">
             </div>
-            <!-- <div class="form-footer"> -->
-                <button class="btn btn-primary btn-block" onclick="applyTextValue()">Apply</button>
-            <!-- </div> -->
+            <div class="form-footer">
+                <button class="btn btn-primary btn-block" type="button" onclick="applyTextValue()">Apply</button>
+            </div>
         </div>
     </form>
 </div>
